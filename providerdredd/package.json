@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dredd": "dredd",
+    "dredd": "./node_modules/.bin/dredd",
     "test": "concurrently -k -s \"first\" \"npm start\" \"sleep 3 && npm run dredd\"",
     "test:publish": "npm run publish",
     "publish": "pactflow publish-provider-contract oas/products.yml --provider pactflow-example-bi-directional-provider-dredd --provider-app-version 1.0.0 --branch main --content-type application/yaml --verification-exit-code=0 --verification-results output/report.md --verification-results-content-type \"text/plain\" --verifier dredd",
